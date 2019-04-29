@@ -48,7 +48,7 @@
 # end
 
 
-set :application, "notify-alpha"
-set :repo_url, "https://github.com/ljonny18/notify-alpha.git"
+set :application, "notify_alpha"
+set :repo_url, "https://github.com/jon3dc/notify_alpha.git"
 
 set :linked_dirs, %w{log public/uploads public/uploads_file}

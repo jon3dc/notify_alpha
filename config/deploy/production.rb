@@ -49,4 +49,4 @@ role :app, %w{root@46.43.3.22}
 role :web, %w{root@46.43.3.22}
 role :db,  %w{root@46.43.3.22}
 
-set :deploy_to, "/var/www/notify-alpha"
+set :deploy_to, "/var/www/notify_alpha"
