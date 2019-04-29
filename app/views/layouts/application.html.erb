@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Jonathan Williams, David Bond">
+    <title>Notify</title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <%= render 'layouts/partials/admin_bar' %>
+    <%= render 'layouts/partials/nav' %>
+
+    <div class="container">
+    
+      <%= yield %>
+
+      <%= render 'layouts/partials/footer' %>
+
+    </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,23 @@
+<% if user_signed_in? %>
+	<div class="admin-bar p-1 px-md-4 border-bottom">
+		<div class="row">
+			<div class="col-md-12 text-right">
+				
+				<small>Signed is as: <strong><%= current_user.email %></strong></small>
+				
+				<%# if current_user.user_type && current_user.user_type.userType %>
+					<%# if current_user.user_type.userType == "admin" %>
+						<!-- <span class='label label-danger'>admin</span> -->
+					<%# elsif current_user.user_type.userType == "super"%>
+						<!-- <span class='label label-success'>super</span> -->
+					<%# else %>
+						<!-- <span class='label label-default'><%#= current_user.user_type.userType %></span> -->
+					<%# end %>
+				<%# else %>
+					<!-- <span class='label label-default'>basic</span> -->
+				<%# end %>
+				
+			</div>
+		</div>
+	</div>
+<% end %>
