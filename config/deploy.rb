@@ -52,3 +52,5 @@ set :application, "notify_alpha"
 set :repo_url, "https://github.com/jon3dc/notify_alpha.git"
 
 set :linked_dirs, %w{log public/uploads public/uploads_file}
+
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
