@@ -42,4 +42,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 # https://github.com/Shopify/bootsnap/issues/254
-gem 'bootsnap', '>= 1.1.0', '< 1.4.2', require: false
+gem 'bootsnap', '1.4.1', require: false
