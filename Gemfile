@@ -14,7 +14,11 @@ gem 'uglifier', '4.1.20'
 gem 'coffee-rails', '4.2.2'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder', '2.8.0'
-gem 'bootsnap', '1.4.3', require: false
+
+# gem 'bootsnap', '1.4.3', require: false
+# https://github.com/Shopify/bootsnap/issues/254
+gem 'bootsnap', '1.4.1', require: false
+
 gem 'devise'
 
 group :development, :test do
@@ -41,5 +45,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-# https://github.com/Shopify/bootsnap/issues/254
-gem 'bootsnap', '1.4.1', require: false
+
