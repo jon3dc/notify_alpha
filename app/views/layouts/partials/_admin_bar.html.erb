@@ -2,21 +2,20 @@
 	<div class="admin-bar p-1 px-md-4 border-bottom">
 		<div class="row">
 			<div class="col-md-12 text-right">
-				
+
 				<small>Signed is as: <strong><%= current_user.email %></strong></small>
 				
-				<%# if current_user.user_type && current_user.user_type.userType %>
-					<%# if current_user.user_type.userType == "admin" %>
-						<!-- <span class='label label-danger'>admin</span> -->
-					<%# elsif current_user.user_type.userType == "super"%>
-						<!-- <span class='label label-success'>super</span> -->
-					<%# else %>
-						<!-- <span class='label label-default'><%#= current_user.user_type.userType %></span> -->
-					<%# end %>
-				<%# else %>
-					<!-- <span class='label label-default'>basic</span> -->
-				<%# end %>
-				
+				<a class="btn btn-admin btn-sm ml-2" href="#" role="button" id="admin_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class='fas fa-cog'></i>
+				</a>
+
+				<div class="dropdown-menu" aria-labelledby="admin_menu">
+					<%= link_to "Users", users_path, class: "dropdown-item" %>
+					<%= link_to "Accounts", accounts_path, class: "dropdown-item" %>
+					<%= link_to "Majors", majors_path, class: "dropdown-item" %>
+					<%= link_to "Minors", minors_path, class: "dropdown-item" %>
+				</div>
+
 			</div>
 		</div>
 	</div>

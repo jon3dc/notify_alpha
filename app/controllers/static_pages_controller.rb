@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-  layout :resolve_layout
+  # layout :resolve_layout
 
   def home
   end
@@ -19,13 +19,13 @@ class StaticPagesController < ApplicationController
 
 
 
-  def resolve_layout
-    case action_name
-    when "home"
-      "coming"
-    else
-      "application"
-    end
-  end
+  # def resolve_layout
+  #   case action_name
+  #   when "home"
+  #     "coming"
+  #   else
+  #     "application"
+  #   end
+  # end
 
 end

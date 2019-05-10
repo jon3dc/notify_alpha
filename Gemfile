@@ -15,6 +15,8 @@ gem 'coffee-rails', '4.2.2'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder', '2.8.0'
 
+gem 'friendly_id', '~> 5.2.4'
+
 # gem 'bootsnap', '1.4.3', require: false
 # https://github.com/Shopify/bootsnap/issues/254
 gem 'bootsnap', '1.4.1', require: false

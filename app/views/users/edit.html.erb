@@ -1,6 +1,4 @@
-<h1>Editing User</h1>
-
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 margin-bottom-20">
+  <h1 class="h2">Editing User <small class="text-muted">(<%= @user.email %>)</small></h1>
+</div>
 <%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>

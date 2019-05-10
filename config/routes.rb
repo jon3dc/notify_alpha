@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :minors
+  resources :majors
   resources :accounts
 	resources :users
 	

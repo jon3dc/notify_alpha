@@ -28,11 +28,11 @@ class AccountsController < ApplicationController
 
     respond_to do |format|
       if @account.save
-        format.html { redirect_to @account, notice: 'Account was successfully created.' }
-        format.json { render :show, status: :created, location: @account }
+        flash[:notice] = 'Account was successfully created.'
+        format.html { redirect_to action: "index" }
       else
-        format.html { render :new }
-        format.json { render json: @account.errors, status: :unprocessable_entity }
+        flash[:alert] = custom_error_message_rendering(@account.errors)
+        format.html { redirect_to action: "new" }
       end
     end
   end
@@ -42,14 +42,15 @@ class AccountsController < ApplicationController
   def update
     respond_to do |format|
       if @account.update(account_params)
-        format.html { redirect_to @account, notice: 'Account was successfully updated.' }
-        format.json { render :show, status: :ok, location: @account }
+        flash[:notice] = 'Account was successfully updated.'
+        format.html { redirect_to action: "index" }
       else
-        format.html { render :edit }
-        format.json { render json: @account.errors, status: :unprocessable_entity }
+        flash[:alert] = custom_error_message_rendering(@account.errors)
+        format.html { render action: 'edit' }
       end
     end
   end
+
 
   # DELETE /accounts/1
   # DELETE /accounts/1.json

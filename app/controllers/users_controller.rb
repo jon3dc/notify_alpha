@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+  
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+  before_action :is_super_user
 
   # GET /users
   # GET /users.json
@@ -28,25 +31,26 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        flash[:notice] = 'User was successfully created.'
+        format.html { redirect_to action: "index" }
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        flash[:notice] = custom_error_message_rendering(@user.errors)
+        format.html { redirect_to action: "new" }
       end
     end
   end
+
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+          flash[:notice] = 'User was successfully updated.'
+          format.html { redirect_to action: "index" }
       else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        flash[:alert] = custom_error_message_rendering(@user.errors)
+          format.html { render action: 'edit' }
       end
     end
   end

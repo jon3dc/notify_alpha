@@ -1,0 +1,1 @@
+json.extract! @major, :id, :name, :description, :account, :minors

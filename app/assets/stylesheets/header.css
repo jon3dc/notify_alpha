@@ -1,4 +1,28 @@
 .admin-bar {
-	background-color: #333;
-	color: #eee;
+	background-color: #86C340;
+	color: #fff;
+}
+
+.header-logo {
+	max-height: 40px;
+}
+
+
+.btn-sign_in {
+	color: #388F55;
+    border-color: #388F55;
+}
+.btn-sign_in:hover {
+	color: #388F55;
+    border-color: #388F55;
+}
+
+
+.btn-admin {
+	color: #fff;
+    border-color: #fff;
+}
+.btn-admin:hover {
+	color: #fff;
+    border-color: #fff;
 }
