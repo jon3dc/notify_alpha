@@ -41,13 +41,6 @@ class MinorsController < ApplicationController
   # PATCH/PUT /minors/1.json
   def update
     respond_to do |format|
-      puts "-------------"
-      puts "-------------"
-      puts "-------------"
-      puts minor_params
-      puts "-------------"
-      puts "-------------"
-      puts "-------------"
       if @minor.update(minor_params)
         flash[:notice] = 'Minor was successfully updated.'
         format.html { redirect_to action: "index" }
