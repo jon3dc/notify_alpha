@@ -41,6 +41,13 @@ class MinorsController < ApplicationController
   # PATCH/PUT /minors/1.json
   def update
     respond_to do |format|
+      puts "-------------"
+      puts "-------------"
+      puts "-------------"
+      puts minor_params
+      puts "-------------"
+      puts "-------------"
+      puts "-------------"
       if @minor.update(minor_params)
         flash[:notice] = 'Minor was successfully updated.'
         format.html { redirect_to action: "index" }
@@ -69,6 +76,7 @@ class MinorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def minor_params
-      params.require(:minor).permit(:name, :description, :enter_text, :exit_text, :major_id)
+      # params.require(:minor).permit(:name, :description, :enter_text, :exit_text, :major_id)
+      params.require(:minor).permit(:name, :description, :enter_text, :exit_text, major_ids: [])
     end
 end
