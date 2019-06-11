@@ -8,7 +8,7 @@
       <% @minors.each do |minor| %>
       <tr>
         <td class="align-middle"><%= minor.name %></td>
-        <td class="align-middle"><em class="text-muted"><%= minor.description.truncate(50) %></em></td>
+        <td class="align-middle"><em class="text-muted"><%= minor.description.truncate(50) if minor.description %></em></td>
         <!-- <td class="align-middle"><span class="badge badge-warning"><%#= minor.major.name if minor.major %></span></td> -->
         <td class="text-right align-middle">
           <%= link_to 'Edit', edit_minor_path(minor), class: "btn btn-sm btn-outline-secondary" %>

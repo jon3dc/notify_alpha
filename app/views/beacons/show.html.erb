@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Major name:</strong>
+  <%= @beacon.major_name %>
+</p>
+
+<p>
+  <strong>Major description:</strong>
+  <%= @beacon.major_description %>
+</p>
+
+<p>
+  <strong>Minor name:</strong>
+  <%= @beacon.minor_name %>
+</p>
+
+<p>
+  <strong>Minor description:</strong>
+  <%= @beacon.minor_description %>
+</p>
+
+<p>
+  <strong>Enter text:</strong>
+  <%= @beacon.enter_text %>
+</p>
+
+<p>
+  <strong>Exit text:</strong>
+  <%= @beacon.exit_text %>
+</p>
+
+<%= link_to 'Edit', edit_beacon_path(@beacon) %> |
+<%= link_to 'Back', beacons_path %>

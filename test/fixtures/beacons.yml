@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  major_name: MyString
+  major_description: MyText
+  minor_name: MyString
+  minor_description: MyText
+  enter_text: MyText
+  exit_text: MyText
+
+two:
+  major_name: MyString
+  major_description: MyText
+  minor_name: MyString
+  minor_description: MyText
+  enter_text: MyText
+  exit_text: MyText

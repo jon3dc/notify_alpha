@@ -8,9 +8,9 @@
     <% @majors.each do |major| %>
       <tr>
         <td class="align-middle"><%= major.name %></td>
-        <td class="align-middle"><em class="text-muted"><%= major.description.truncate(50) %></em></td>
-        <td class="align-middle"><span class="badge badge-warning"><%= major.account.name if major.account %></span></td>
-        <td class="align-middle"><span class="badge badge-secondary"><%= (major.minors.count.to_s + " minors") if major.minors %></span></td>
+        <td class="align-middle"><em class="text-muted"><%= major.description.truncate(50) if major.description %></em></td>
+        <!-- <td class="align-middle"><span class="badge badge-warning"><%#= major.account.name if major.account %></span></td> -->
+        <!-- <td class="align-middle"><span class="badge badge-secondary"><%#= (major.minors.count.to_s + " minors") if major.minors %></span></td> -->
         <td class="text-right align-middle">
           <%= link_to 'API', "/majors/#{major.slug}.json", class: "btn btn-sm btn-outline-secondary" %>
           <%= link_to 'Edit', edit_major_path(major), class: "btn btn-sm btn-outline-secondary" %>
