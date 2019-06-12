@@ -34,6 +34,13 @@ class BeaconsController < ApplicationController
 
     respond_to do |format|
       if @beacon.save
+
+        @major = Major.create
+        @minor = Minor.create
+        # @beacon.major_id = @major.id
+        # @beacon.minor_id = @minor.id
+        @beacon.update({"major_id"=>@major.id, "minor_id"=>@minor.id})
+
         flash[:notice] = 'Beacon was successfully created.'
         format.html { redirect_to action: "index" }
       else
@@ -41,7 +48,7 @@ class BeaconsController < ApplicationController
         format.html { redirect_to action: "new" }
       end
     end
-    
+
   end
 
   # PATCH/PUT /beacons/1

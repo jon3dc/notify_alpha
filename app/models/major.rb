@@ -5,7 +5,7 @@ class Major < ApplicationRecord
 
 	# belongs_to :account
 
-	belongs_to :beacon
+	# belongs_to :beacon
 
 	# validates :name, presence: true
 	# validates :account, presence: true

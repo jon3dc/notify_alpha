@@ -14,6 +14,9 @@
           <td><%= beacon.enter_text %></td>
           <td><%= beacon.exit_text %></td>
         -->
+        <td class="align-middle"><small class="text-muted">major </small><span class="badge badge-info"><%= beacon.major_id if beacon.major_id %></span></td>
+        <td class="align-middle"><small class="text-muted">minor </small><span class="badge badge-info"><%= beacon.minor_id if beacon.minor_id %></span></td>
+        <td class="align-middle"><span class="badge badge-secondary"><%= beacon.major_id.to_s + "," + beacon.minor_id.to_s %></span></td>
       
         <td class="text-right align-middle">
           <%= link_to 'Edit', edit_beacon_path(beacon), class: "btn btn-sm btn-outline-secondary" %>
