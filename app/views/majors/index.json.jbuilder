@@ -1,9 +1,1 @@
-json.array!(@majors) do |major|
-
-  json.extract! major, :id
-  json.name major.name
-  json.description major.description
-  json.account major.account
-  json.minors major.minors
- 
-end
+json.array! @majors, partial: 'majors/major', as: :major

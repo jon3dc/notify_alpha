@@ -1,6 +1,9 @@
 <div class="row mb-3">
   <div class="col-6"><h3>Beacons</h3></div>
-  <div class="col-6 text-right"><%= link_to 'New Beacon', new_beacon_path, class: "btn btn-outline-secondary" %></div>
+  <div class="col-6 text-right">
+    <%= link_to 'New Beacon', new_beacon_path, class: "btn btn-outline-secondary" %>
+    <%= link_to ('<i class="fas fa-code"></i> JSON <small>(all)</small>').html_safe, "/beacons.json", :target=>"_blank", class: "btn btn-outline-info ml-3" %>
+  </div>
 </div>
 
 <table class="table table-hover">
@@ -10,17 +13,12 @@
         <td class="align-middle"><%= beacon.name %></td>
         <td class="align-middle"><em class="text-muted"><%= beacon.description.truncate(50) if beacon.description %></em></td>
         <td class="align-middle"><span class="badge badge-warning"><%= beacon.account.name if beacon.account %></span></td>
-        <!--
-          <td><%= beacon.enter_text %></td>
-          <td><%= beacon.exit_text %></td>
-        -->
-        <td class="align-middle"><small class="text-muted">major </small><span class="badge badge-info"><%= beacon.major_id if beacon.major_id %></span></td>
-        <td class="align-middle"><small class="text-muted">minor </small><span class="badge badge-info"><%= beacon.minor_id if beacon.minor_id %></span></td>
-        <td class="align-middle"><span class="badge badge-secondary"><%= beacon.major_id.to_s + "," + beacon.minor_id.to_s %></span></td>
-      
+        <td class="align-middle"><span class="badge badge-info"><%= beacon.major.name if beacon.major %></span></td>
+        <td class="align-middle"><span class="badge badge-success"><%= beacon.major.major_id.to_s + "," + beacon.minor_id.to_s %></span></td>
         <td class="text-right align-middle">
           <%= link_to 'Edit', edit_beacon_path(beacon), class: "btn btn-sm btn-outline-secondary" %>
           <%= link_to 'Destroy', beacon, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-outline-secondary" %>
+          <%= link_to ('<i class="fas fa-code"></i> JSON ').html_safe, "/beacons/#{beacon.slug}.json", :target=>"_blank", class: "btn btn-sm btn-outline-info ml-3" %>
         </td>
       </tr>
     <% end %>

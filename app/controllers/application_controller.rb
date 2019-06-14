@@ -38,4 +38,8 @@ class ApplicationController < ActionController::Base
 
 		return returnString.html_safe
 	end
+
+
+
+	
 end

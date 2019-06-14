@@ -71,6 +71,7 @@ class MajorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def major_params
-      params.require(:major).permit(:name, :description, :account_id)
+      params.require(:major).permit(:name, :description, :slug, :major_id, :account_id)
     end
+    
 end

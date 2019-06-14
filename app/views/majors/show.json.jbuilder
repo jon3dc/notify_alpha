@@ -1,1 +1,1 @@
-json.extract! @major, :id, :name, :description, :account, :minors
+json.partial! "majors/major", major: @major
