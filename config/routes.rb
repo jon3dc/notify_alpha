@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :beacons
-  resources :majors
-  resources :accounts
+	resources :beacons
+	resources :majors
+	resources :accounts
 	resources :users
 	
 	# devise_for :users
 	devise_for :user, :controllers => { :confirmations => "confirmations" }
 	devise_scope :user do
-  		put 'user/confirmation', to: 'confirmations#update'
+		put 'user/confirmation', to: 'confirmations#update'
 	end
 	
 	get 'static_pages/home'
@@ -23,8 +23,10 @@ Rails.application.routes.draw do
 		get "sign_out", :to => "devise/sessions#destroy"
 	end
 
+	mount API::Base, at: "/"
+	mount GrapeSwaggerRails::Engine, at: "/documentation"
+
+
+
 	root to: 'static_pages#home'
 end
-
-
-
